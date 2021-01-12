@@ -18,6 +18,43 @@ def methane_molecule():
     return symbols, coordinates
 
 
+@pytest.mark.parametrize(
+    "p1, p2, p3, expected_value",
+    [
+        (
+            np.array([np.sqrt(2) / 2, np.sqrt(2) / 2, 0]),
+            np.array([0, 0, 0]),
+            np.array([1, 0, 0]),
+            45,
+        ),
+        (np.array([0, 0, -1]), np.array([0, 1, 0]), np.array([1, 0, 0]), 60),
+        (
+            np.array([np.sqrt(3) / 2, (1 / 2), 0]),
+            np.array([0, 0, 0]),
+            np.array([1, 0, 0]),
+            30,
+        ),
+    ],
+)
+def test_calculate_angle_many(p1, p2, p3, expected_value):
+    calculated_value = molecool.calculate_angle(p1, p2, p3, degrees=True)
+
+    assert expected_value == pytest.approx(calculated_value),  f'{expected_value}{calculated_value}'
+
+
+def test_calculate_angle():
+
+    r1 = np.array([0, 0, -1])
+    r2 = np.array([0, 0, 0])
+    r3 = np.array([1, 0, 0])
+
+    expected_value = 90
+
+    calculated_value = molecool.calculate_angle(r1, r2, r3, degrees=True)
+
+    assert expected_value == calculated_value
+
+
 def test_build_bond_list_failure(methane_molecule):
 
     symbols, coordinates = methane_molecule
