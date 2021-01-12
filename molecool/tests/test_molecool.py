@@ -39,7 +39,9 @@ def methane_molecule():
 def test_calculate_angle_many(p1, p2, p3, expected_value):
     calculated_value = molecool.calculate_angle(p1, p2, p3, degrees=True)
 
-    assert expected_value == pytest.approx(calculated_value),  f'{expected_value}{calculated_value}'
+    assert expected_value == pytest.approx(
+        calculated_value
+    ), f"{expected_value}{calculated_value}"
 
 
 def test_calculate_angle():
