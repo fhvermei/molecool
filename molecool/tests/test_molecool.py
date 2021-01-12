@@ -18,6 +18,31 @@ def methane_molecule():
     return symbols, coordinates
 
 
+def test_center_of_mass():
+    symbols = np.array(["C", "H", "H", "H", "H"])
+    coordinates = np.array(
+        [[1, 1, 1], [2.4, 1, 1], [-0.4, 1, 1], [1, 1, 2.4], [1, 1, -0.4]]
+    )
+
+    center_of_mass = molecool.calculate_center_of_mass(symbols, coordinates)
+
+    expected_center = np.array([1, 1, 1])
+
+    assert np.array_equal(
+        center_of_mass, expected_center
+    ), f"{center_of_mass}, {expected_center}"
+
+
+def test_molecular_mass(methane_molecule):
+    symbols, coordinates = methane_molecule
+
+    calculated_mass = molecool.calculate_molecular_mass(symbols)
+
+    actual_mass = 16.04
+
+    assert pytest.approx(actual_mass, abs=1e-2) == calculated_mass
+
+
 @pytest.mark.parametrize(
     "p1, p2, p3, expected_value",
     [
