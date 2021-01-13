@@ -1,8 +1,8 @@
 molecool
 ==============================
 [//]: # (Badges)
-[![GitHub Actions Build Status](https://github.com/REPLACE_WITH_OWNER_ACCOUNT/molecool/workflows/CI/badge.svg)](https://github.com/REPLACE_WITH_OWNER_ACCOUNT/molecool/actions?query=workflow%3ACI)
-[![codecov](https://codecov.io/gh/REPLACE_WITH_OWNER_ACCOUNT/molecool/branch/master/graph/badge.svg)](https://codecov.io/gh/REPLACE_WITH_OWNER_ACCOUNT/molecool/branch/master)
+[![CI](https://github.com/fhvermei/molecool/workflows/CI/badge.svg)](https://github.com/fhvermei/molecool/actions?query=workflow%3ACI)
+[![codecov](https://codecov.io/gh/fhvermei/molecool/branch/master/graph/badge.svg)](https://codecov.io/gh/fhvermei/molecool/branch/master)
 
 
 A python project for analyzing and visualizing molecular files for MolSSI workshop
