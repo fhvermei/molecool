@@ -20,9 +20,7 @@ class Molecule:
         self._first_stage(parameter_list)
         self._second_stage(parameter_list)
         self._third_stage(parameter_list)
-        #fisrt stage
-        #second
-        #thrid
+
 
     def _first_stage(self, parameter_list):
         # performs firsty stage
